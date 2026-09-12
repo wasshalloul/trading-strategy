@@ -30,16 +30,16 @@ short.
 ## Results
 
 ```bash
-python run\_backtest.py --ticker SPY --short 50 --long 200 --years 10
+python run_backtest.py --ticker SPY --short 50 --long 200 --years 10
 ```
 
-!\[SPY Backtest](notebooks/SPY\_backtest.png)
+![SPY Backtest](notebooks/SPY_backtest.png)
 
 *Real results: 50/200-day MA crossover on SPY, 10 years of daily data.*
 
 
 
-*| Metric | Strategy | Buy \& Hold |*
+*| Metric | Strategy | Buy & Hold |*
 
 *|---|---|---|*
 
@@ -61,7 +61,7 @@ python run\_backtest.py --ticker SPY --short 50 --long 200 --years 10
 
 
 
-|Metric|Strategy|Buy \& Hold|
+|Metric|Strategy|Buy & Hold|
 |-|-|-|
 |Total return|placeholder|placeholder|
 |CAGR|placeholder|--|
@@ -118,16 +118,16 @@ is attractive.
 pip install -r requirements.txt
 
 # Run the backtest on real data (requires internet access)
-python run\_backtest.py --ticker SPY --short 50 --long 200 --years 10
+python run_backtest.py --ticker SPY --short 50 --long 200 --years 10
 
 # Generate the chart from the saved results
-python notebooks/plot\_backtest.py --ticker SPY
+python notebooks/plot_backtest.py --ticker SPY
 
 # Run tests
-python tests/test\_strategy.py
+python tests/test_strategy.py
 ```
 
-Useful flags on `run\_backtest.py`:
+Useful flags on `run_backtest.py`:
 
 * `--short` / `--long`: moving average windows (days)
 * `--years`: how many years of history to pull
@@ -136,7 +136,7 @@ Useful flags on `run\_backtest.py`:
 
 ## Validation
 
-All 7 unit tests pass (`tests/test\_strategy.py`), including checks that:
+All 7 unit tests pass (`tests/test_strategy.py`), including checks that:
 
 * The strategy never trades on the same day a crossover is confirmed (no
 lookahead bias)
@@ -150,16 +150,16 @@ long in a clean downtrend
 ```
 trading-strategy/
 ├── strategy/
-│   └── ma\_crossover.py     # Signal generation logic
+│   └── ma_crossover.py     # Signal generation logic
 ├── backtest/
 │   └── engine.py           # Backtest simulation + performance metrics
 ├── tests/
-│   └── test\_strategy.py    # Unit tests
+│   └── test_strategy.py    # Unit tests
 ├── notebooks/
-│   ├── plot\_backtest.py    # Visualization script
-│   └── SPY\_backtest.png    # Generated chart
+│   ├── plot_backtest.py    # Visualization script
+│   └── SPY_backtest.png    # Generated chart
 ├── data/                   # Saved backtest output (CSV)
-├── run\_backtest.py         # Main entry point: fetch data + run backtest
+├── run_backtest.py         # Main entry point: fetch data + run backtest
 ├── requirements.txt
 └── README.md
 ```
